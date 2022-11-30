@@ -1,0 +1,7 @@
+django
+social-auth-app-django
+folium
+pandas
+polyline
+requests
+python-dotenv
