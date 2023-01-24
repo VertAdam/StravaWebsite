@@ -41,7 +41,8 @@ def connected_map(request):
 
     # Plot Polylines onto Folium Map
     for pl in activities_df['polylines']:
-        folium.PolyLine(locations=pl, color='red').add_to(main_map)
+        if len(pl) > 0: # Ignore polylines with length zero (Thanks Joukesmink for the tip)
+            folium.PolyLine(locations=pl, color='red').add_to(main_map)
 
     # Return HTML version of map
     main_map_html = main_map._repr_html_() # Get HTML for website
